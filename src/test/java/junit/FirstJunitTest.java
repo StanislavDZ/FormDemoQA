@@ -61,7 +61,6 @@ public class FirstJunitTest {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("pic.png"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Taxes, BestCh.St 17"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Delhi"));
-
         $(byText("Close")).click();
     }
 }
