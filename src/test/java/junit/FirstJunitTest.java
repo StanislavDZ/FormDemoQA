@@ -47,7 +47,6 @@ public class FirstJunitTest {
         $("#city").click();
         $(byText("Delhi")).click();
         $("#submit").click();
-
     }
 }
 
