@@ -1,10 +1,6 @@
 package pages.components;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.commands.PressEnter;
-import org.openqa.selenium.Keys;
-
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
