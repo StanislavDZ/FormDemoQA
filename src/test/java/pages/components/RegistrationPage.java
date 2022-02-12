@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class RegistrationPage {
     //Заводим переменную с типом CalendarComponent
     CalendarComponent calendarComponent = new CalendarComponent();
-    checkForm checkForm = new checkForm();
+    CheckForm checkForm = new CheckForm();
 
 
     //locators
