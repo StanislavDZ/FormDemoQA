@@ -31,7 +31,7 @@ public class SecondJunitTest {
     String date;
     String subj1 = "Computer Science";
     String subj2 = "Arts";
-    String[] hobbie = {"Sports", "Reading", "Music"};
+    String hobbie = "Reading"; //вернуть массив на место! переделать проверку после изучения доп материалов
     File foto = new File("src/test/resources/pic.png");
     String userAdress = "Taxes, BestCh.St 17";
     String userState = "NCR";

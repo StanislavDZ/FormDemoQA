@@ -87,14 +87,6 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage userHobbiesInput(String[] hobbie) {
-        for (String hobby : hobbie) {
-            hobbiesInput.$(byText(hobby)).click();
-        }
-
-        return this;
-    }
-
     public RegistrationPage uploadFile(File foto) {
         uploadFileInput.uploadFile(foto);
 
