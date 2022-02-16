@@ -42,7 +42,6 @@ public class PrimitiveTO {
             g = e >>> 2;
             System.out.println("e >>> 2 = " + g );
 
-
                 //Логические операторы
             boolean h = true, i = false;
 
