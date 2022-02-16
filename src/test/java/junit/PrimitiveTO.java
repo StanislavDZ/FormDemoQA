@@ -58,8 +58,6 @@ public class PrimitiveTO {
 
             System.out.println("!(a && b) = " + !(h && i));
 
-
-
             // Разные типы данных + операции над  ними
             byte a1 = 15, a2 = 30;
             short b1 = 20;
@@ -76,7 +74,6 @@ public class PrimitiveTO {
             System.out.println("double + short =" + (e1 % b1));
             System.out.println("Переполнение byte =" + ((a1 + 118)^a2) + " " + (a2 - 173));
             System.out.println("Char = " + (d2+f2));
-
-    }
+   }
 
 }
