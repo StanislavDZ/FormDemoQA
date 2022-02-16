@@ -26,26 +26,20 @@ public class PrimitiveTO {
             System.out.println("b >= a = " + (b >= a) );
             System.out.println("b <= a = " + (b <= a) );
 
-                //Побитовые операторы - очень крутая тема, не смог пройти мимо ^_^
-            g = e & f;       /* 12 = 0000 1100 */
+                //Побитовые операторы - очень крутая тема, не смог пройти мимо ^_^, разобрался, но где это применяют, ума не приложу...
+            g = e & f;
             System.out.println("e & f = " + g );
-
-            g = e | f;       /* 61 = 0011 1101 */
+            g = e | f;
             System.out.println("e | f = " + g );
-
-            g = e ^ f;       /* 49 = 0011 0001 */
+            g = e ^ f;
             System.out.println("e ^ f = " + g );
-
-            g = ~e;          /*-61 = 1100 0011 */
+            g = ~e;
             System.out.println("~e = " + g );
-
-            g = e << 2;     /* 2 40 = 1111 0000 */
+            g = e << 2;
             System.out.println("e << 2 = " + g );
-
-            g = e >> 2;     /* 2 15 = 1111 */
+            g = e >> 2;
             System.out.println("e >> 2  = " + g );
-
-            g = e >>> 2;     /* 2 15 = 0000 1111 */
+            g = e >>> 2;
             System.out.println("e >>> 2 = " + g );
 
 
