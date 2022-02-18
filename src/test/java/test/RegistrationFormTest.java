@@ -1,4 +1,4 @@
-package junit;
+package test;
 
 
 import com.codeborne.selenide.Configuration;
@@ -10,11 +10,8 @@ import org.junit.jupiter.api.Test;
 import pages.components.RegistrationPage;
 
 public class RegistrationFormTest {
-
     //Заводим переменную с типом RegistrationPage, зыы то же что AS
     RegistrationPage rp = new RegistrationPage();
-
-
     //выносим тестовые данные
     String firstName = "Stanislav";
     String lastName = "Zaychenko";

@@ -1,4 +1,4 @@
-package junit;
+package test;
 
 public class StudentRegistrationPage {
 }
