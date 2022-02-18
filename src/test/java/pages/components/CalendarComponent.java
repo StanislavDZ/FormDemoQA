@@ -1,19 +1,16 @@
 package pages.components;
 
 import org.openqa.selenium.Keys;
-
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CalendarComponent {
 
-    public void dateInput(String date) {
-        //$("#dateOfBirthInput").sendKeys( Keys.CONTROL,"a");
-        //$("react-datepicker__month-select").selectOption(month);
-        //$("react-datepicker__year-select").selectOption(year);
-        //$(".react-datepicker__day--0" + day + "").click()
-        //$("[aria-label$='" + month + " " + day + "th, " + year + "']").click();
-        $("#dateOfBirthInput").sendKeys( Keys.CONTROL,"a");
-        $("#dateOfBirthInput").sendKeys( "13 apr 1987", Keys.ENTER);
-
+    public void dateInput(String day, String month, String year) {
+        $(".react-datepicker__year-select").selectOption(year);
+        $(".react-datepicker__month-select").selectOption(month);
+        $(byText(day)).click();
+        //$("#dateOfBirthInput").sendKeys( Keys.CONTROL,"a"); //универсальный вариант заполнения любых полей с заменой текста
+        //$("#dateOfBirthInput").sendKeys( "13 apr 1987", Keys.ENTER);
     }
 }

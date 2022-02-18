@@ -9,11 +9,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 import pages.components.RegistrationPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-
-public class SecondJunitTest {
+public class RegistrationFormTest {
 
     //Заводим переменную с типом RegistrationPage, зыы то же что AS
     RegistrationPage rp = new RegistrationPage();

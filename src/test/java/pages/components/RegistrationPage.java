@@ -11,8 +11,6 @@ public class RegistrationPage {
     //Заводим переменную с типом CalendarComponent
     CalendarComponent calendarComponent = new CalendarComponent();
     CheckForm checkForm = new CheckForm();
-
-
     //locators
     private SelenideElement
             headerTitle = $(".practice-form-wrapper"),
@@ -30,7 +28,6 @@ public class RegistrationPage {
             userCityInput = $("#city"),
             submitPut = $("#submit"),
             checkFormIn = $(".table-responsive");
-
     //actions test
     public RegistrationPage openPage() {
         open("automation-practice-form");
@@ -38,7 +35,6 @@ public class RegistrationPage {
 
         return this;
     }
-
     //actions
     public RegistrationPage setFirstName(String firstName) {
         firstNameInput.setValue(firstName);
@@ -60,54 +56,47 @@ public class RegistrationPage {
         userNumberInput.setValue(userNumber);
         return this;
     }
-
     public RegistrationPage userAddressInput(String userAddress) {
         userAddressInput.setValue(userAddress);
         return this;
     }
-
     public void setDate(String date) {
-        //$("#dateOfBirthInput").click();
-         calendarComponent.dateInput(date);
-        //calendarComponent.dateInput(day, month, year);
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption("April");
+        $(".react-datepicker__year-select").selectOption("1987");
+        $$(".react-datepicker__day").find(text("13")).click();
+        //calendarComponent.dateInput(date); //оставлю как вариант на будущее
     }
     public RegistrationPage setSubjectsInput(String subj1, String subj2) {
         setSubjectsInput.setValue(subj1).pressEnter();
         setSubjectsInput.setValue(subj2).pressEnter();
-
         return this;
     }
     public RegistrationPage userHobbiesInput(String hobby) {
         hobbiesInput.$(byText(hobby)).click();
-
         return this;
     }
-
     public RegistrationPage uploadFile(File foto) {
         uploadFileInput.uploadFile(foto);
-
         return this;
     }
-
     public RegistrationPage userStateInput(String userState) {
         submitPut.scrollTo();
         userStateInput.click();
         userStateInput.$(byText(userState)).click();
         return this;
-
-    } public RegistrationPage userCityInput(String userCity) {
+    }
+    public RegistrationPage userCityInput(String userCity) {
         userCityInput.click();
         userCityInput.$(byText(userCity)).click();
         return this;
-
     }
     public RegistrationPage submitPut(String subimtForm) {
         submitPut.click();
         return this;
     }
-//разобраться детальней с созданием форм, пока плавает понимание
     public RegistrationPage checkForm(String fieldName, String value) {
-        checkFormIn.$(byText(fieldName)).parent().shouldHave(text(value));
+        checkFormIn.$(byText(fieldName)).parent().shouldHave(text(value)); //разобраться детальней с созданием форм, пока плавает понимание
         return this;
     }
 }
