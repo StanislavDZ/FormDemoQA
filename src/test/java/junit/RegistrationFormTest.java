@@ -21,10 +21,9 @@ public class RegistrationFormTest {
     String userEmail = "Ashestodust@yandex.ru";
     String genterWrapper = "Male";
     String userNumber = "9147851961";
-    //String day = "13";
-    //String month = "April";
-    //String year = "1987";
-    String date;
+    String day = "13";
+    String month = "April";
+    String year = "1987";//    String date;
     String subj1 = "Computer Science";
     String subj2 = "Arts";
     String hobbie = "Reading"; //вернуть массив на место! переделать проверку после изучения доп материалов
@@ -49,18 +48,14 @@ public class RegistrationFormTest {
                     .userEmailName(userEmail)
                     .userGender(genterWrapper)
                     .userNumberName(userNumber)
-                    //.setDate(day, month, year) //ошибка при таком подходе..
                     .setSubjectsInput(subj1, subj2)
                     .userHobbiesInput(hobbie)
                     .uploadFile(foto)
                     .userAddressInput(userAdress)
                     .userStateInput(userState)
                     .userCityInput(userCity)
-                    .setDate(date);//rp.setDate(day, month, year);  //rp.setDate("13", "May", "1987");
-
-
+                    .setDate(day,month,year);
         rp.submitPut(subimtForm);
-
         //Проверяем заполнение формы
                 rp
                 .checkForm("Student Name", firstName + " " + lastName)

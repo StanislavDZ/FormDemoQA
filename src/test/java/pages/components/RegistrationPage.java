@@ -19,7 +19,7 @@ public class RegistrationPage {
             userEmailInput = $("#userEmail"),
             userGenderInput = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
-            //dateInput = $("#dateOfBirthInput"),
+            dateInput = $("#dateOfBirthInput"),
             setSubjectsInput = $("#subjectsInput"),
             hobbiesInput = $(".practice-form-wrapper #hobbiesWrapper"),
             uploadFileInput =  $("#uploadPicture"),
@@ -60,7 +60,7 @@ public class RegistrationPage {
         userAddressInput.setValue(userAddress);
         return this;
     }
-    public void setDate(String date) {
+    public void setDate(String day, String month, String date) {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("April");
         $(".react-datepicker__year-select").selectOption("1987");
