@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
 
-    public class HerokuappDragNDrop {
+    public class DragNDropTest {
 
         @BeforeAll
         static void beforeAll() {
@@ -16,9 +16,9 @@ import static com.codeborne.selenide.Selenide.*;
         }
 
         @Test
-        void shouldCheckDragAndDrop() {
+        void testDragNDrop() {
             open("/drag_and_drop");
             $("#column-a").dragAndDropTo($("#column-b")).$("header").shouldHave(text("B"));
-            $("#column-b").$("header").shouldHave(text("A"));
+            $("#column-b").$("header").shouldHave(text("A")); sleep(5000);
         }
     }
