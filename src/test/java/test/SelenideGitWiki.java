@@ -17,13 +17,13 @@ public class SelenideGitWiki {
 
     @Test
     void checkSoftAssertion() {
-        open("/");                                                                                      //Открыть Github
+        open("/");                                                                                             //Открыть Github
         $("[data-test-selector=nav-search-input]").setValue("selenide").pressEnter();                          //Осуществить поиск selenide и перейти на страницу поиска
         $$(".repo-list li").first().$("a").click();                                                            //Открываем первую ссылку в списке по запросу Selenide
         $("#repository-container-header").shouldHave(text("Wiki"));                                            //Проверяем наличие Wiki на странице
         $("#wiki-tab").click();                                                                                //Перейдите в раздел Wiki проекта
         $("#wiki-pages-box").$(".js-wiki-more-pages-link").click();                                            //Разворачиваем список дополнительных меню
-        $("#wiki-pages-box").shouldHave(text("SoftAssertions")).$(byText("SoftAssertions")).click(); //Проверяем наличие SoftAssertions и сразу переходим на страницу
-        $(".markdown-body").shouldHave(text("Using JUnit5 extend test class:"));        //Проверяем наличие примера JUnit5
+        $("#wiki-pages-box").shouldHave(text("SoftAssertions")).$(byText("SoftAssertions")).click();           //Проверяем наличие SoftAssertions и сразу переходим на страницу
+        $(".markdown-body").shouldHave(text("Using JUnit5 extend test class:"));                               //Проверяем наличие примера JUnit5
     }
 }
