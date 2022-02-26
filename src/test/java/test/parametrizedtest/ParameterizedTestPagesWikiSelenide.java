@@ -37,11 +37,11 @@ public class ParameterizedTestPagesWikiSelenide {
             "Snippets",
             "SoftAssertions"}
     )
-    @ParameterizedTest(name = "Проверка наличия кнопок в меню Pages на странице Wiki (Git-Selenide) {0}")
+    @ParameterizedTest(name = "Интерфейсная проверка меню Pages - Wiki (Git-Selenide) {13}")
 
     void checkPagesTest(String checkPages) {
         $("#wiki-pages-box").$(".js-wiki-more-pages-link").click();                                            //Разворачиваем список дополнительных меню
         $("#wiki-pages-box").shouldHave(text(checkPages)).$(byText(checkPages)).click();
-
+        $("#wiki-wrapper").shouldHave(text(checkPages));
     }
 }
