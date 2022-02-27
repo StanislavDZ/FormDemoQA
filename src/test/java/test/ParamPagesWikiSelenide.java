@@ -1,4 +1,4 @@
-package test.parametrizedtest;
+package test;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,16 +14,18 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class ParameterizedTestPagesWikiSelenide {
+public class ParamPagesWikiSelenide {
 
     @BeforeEach
     void precondition() {
         open("https://github.com/selenide/selenide/wiki");
     }
+
     @AfterEach
     void closerBrowser() {
         closeWebDriver();
     }
+
     @ValueSource(strings = {
             "Home",
             "Build script",
@@ -48,7 +50,8 @@ public class ParameterizedTestPagesWikiSelenide {
         $("#wiki-pages-box").shouldHave(text(checkPages)).$(byText(checkPages)).click();
         $("#wiki-wrapper").shouldHave(text(checkPages));
     }
-    @CsvSource (value = {
+
+    @CsvSource(value = {
             "Home | Chapters",
             "Build script | Gradle",
             "Custom conditions | Moving",
@@ -77,19 +80,19 @@ public class ParameterizedTestPagesWikiSelenide {
 
     }
 
-
-@MethodSource(value = "mixedArgumensInterfaceCheck")
-    @ParameterizedTest(name = "Interface check Pages  Wiki (Git-Selenide) Includes \"{0}\"")
-void mixedArgumensInterfaceCheck(String firstArg, String secondArg){
-        System.out.println("Title:" + firstArg + "Includes:" + secondArg);
-        sleep(5000);
-}
     static Stream<Arguments> mixedArgumensInterfaceCheck() {
         return Stream.of(
-                Arguments.of("Home", "Chapters")
+                Arguments.of("Home", "Chapters"),
                 Arguments.of("Build script", "Gradle"),
                 Arguments.of("Custom conditions", "Moving"),
-                Arguments.of("Do not use getters in tests", "The good")
-        );
+                Arguments.of("Do not use getters in tests", "The good"));
     }
+
+    @MethodSource(value = "mixedArgumensInterfaceCheck")
+    @ParameterizedTest(name = "Interface check Pages  Wiki (Git-Selenide) Includes \"{0}\"")
+    void mixedArgumensInterfaceCheck(String firstArg, String secondArg) {
+        System.out.println("Title:" + firstArg + "Includes:" + secondArg);
+        sleep(5000);
+    }
+
 }
