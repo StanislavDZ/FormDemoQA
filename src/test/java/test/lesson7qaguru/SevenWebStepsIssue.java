@@ -30,11 +30,11 @@ public class SevenWebStepsIssue {
         $(".header-search-input").sendKeys(repository);
         $(".header-search-input").submit();
     }
-    @Step("Open link {repository}")
+    @Step("Open URL {repository}")
     public void openLink(String REPOSITORY) {
         $(By.linkText(REPOSITORY)).click();
     }
-    @Step("Click Tab-menu ISSUES")
+    @Step("Click menu ISSUES")
     public void clickTabMenuIssues() {
         $(By.partialLinkText("Issues")).click();
     }
