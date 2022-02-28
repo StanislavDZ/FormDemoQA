@@ -1,4 +1,4 @@
-package test;
+package test.lesson6qaguru;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
