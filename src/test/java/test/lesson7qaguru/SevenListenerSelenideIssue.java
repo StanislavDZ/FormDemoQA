@@ -30,7 +30,5 @@ public class SevenListenerSelenideIssue {
         $(By.linkText("StanislavDZ/FormDemoQA1")).click();
         $(By.partialLinkText("Issues")).click();
         $(withText("Issues")).should(Condition.exist);
-
-
     }
 }
