@@ -21,6 +21,6 @@ public class DNDTestTo8lesson {
         $("#column-b").$("header").shouldHave(text("A")); sleep(5000);
     }
 }
-//commit 1
-//commit 2
+//commit 1.1
+//commit 2.2
 //commit 3
