@@ -2,10 +2,12 @@ package test.lesson9qaguru;
 
 import com.codeborne.pdftest.PDF;
         import com.codeborne.xlstest.XLS;
-        import com.opencsv.CSVReader;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.opencsv.CSVReader;
         import org.junit.jupiter.api.Test;
+import test.lesson9qaguru.jsonclass.MenuJson;
 
-        import java.io.InputStream;
+import java.io.InputStream;
         import java.io.InputStreamReader;
         import java.util.Enumeration;
         import java.util.List;
@@ -13,6 +15,8 @@ import com.codeborne.pdftest.PDF;
         import java.util.zip.ZipFile;
 
     import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.InstanceOfAssertFactories.array;
+
 
 public class ParsingZipTest {
 
@@ -59,5 +63,17 @@ public class ParsingZipTest {
                     "test 1;Sunday"
             );
         }
+    }
+
+    @Test
+    void jsonTest() throws Exception{
+            ClassLoader classLoader = getClass().getClassLoader();
+            ObjectMapper mapper = new ObjectMapper();
+            try (InputStream is = classLoader.getResourceAsStream("JsonHW9.json")) {
+                MenuJson json = mapper.readValue(is, MenuJson.class);
+                assertThat(json.Menu).contains("sandvich");
+                assertThat(json.Items).contains("hleb");
+                assertThat(json.Actions).contains("kushat");
+            }
     }
 }
